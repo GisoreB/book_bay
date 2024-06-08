@@ -1,0 +1,218 @@
+@import "@fontsource/poppins/400.css";
+@import "@fontsource/poppins/600.css";
+@import "@fontsource/poppins/800.css";
+
+/* Josh's Custom CSS Reset 
+https://www.joshwcomeau.com/css/custom-css-reset/ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* Remove animations preference */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/*===========================================================*/
+/*+++ General Styling +++||----------------------------------*/
+/*===========================================================*/
+
+:root {
+  --max-width: 1200px;
+  --border-radius: 0.5rem;
+
+  --color-bg: rgb(237, 246, 244);
+  --color-alt: rgb(175, 193, 192);
+  --color-text: rgb(0, 0, 0);
+  --color-link: rgb(1, 64, 128);
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+}
+
+main {
+  max-width: 1200px;
+  margin-inline: auto;
+  padding: 2rem 1rem;
+}
+
+button {
+  background-color: transparent;
+  border: 1px solid;
+  border-radius: var(--border-radius);
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: ease-in-out 0.25s;
+
+  &:hover {
+    background-color: var(--color-alt);
+  }
+}
+
+input {
+  border-radius: var(--border-radius);
+  border: 1px solid;
+  padding: 0.5rem 1rem;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-link);
+  transition: 200ms ease-in-out;
+
+  &:hover {
+    color: rgb(0, 141, 188);
+  }
+}
+
+/*===========================================================*/
+/*+++ Custom Styling +++||-----------------------------------*/
+/*===========================================================*/
+
+.navbar {
+  justify-content: center;
+  font-size: 2rem;
+  background-color: var(--color-alt);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-weight: 900;
+
+  h1 {
+    font-weight: 900;
+  }
+
+  ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    text-decoration: none;
+    gap: 1rem;
+  }
+}
+
+.search-form {
+  margin-inline: auto;
+  padding-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.book-list {
+  max-width: var(--max-width);
+  display: grid;
+  gap: 1rem;
+}
+
+.book-list-item {
+  list-style: none;
+  border: 1px solid;
+  padding: 1rem;
+  position: relative;
+  border-radius: var(--border-radius);
+  font-weight: 400;
+  background-color: #fff;
+
+  h2 {
+    font-weight: 600;
+    font-size: 1.25rem;
+  }
+
+  button {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    padding: 0.5rem;
+    font-size: 1.5rem;
+  }
+}
+
+.add-book {
+  form {
+    display: flex;
+    flex-direction: column;
+    input {
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+.info-message {
+  padding: 2rem;
+  text-align: center;
+}
+
+.author-details {
+  text-align: center;
+  h1 {
+    font-size: 2.5rem;
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+}
+
+.book-details {
+  text-align: center;
+}
